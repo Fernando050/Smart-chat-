@@ -1,0 +1,69 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body {
+    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #311042, #020617);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    height: 100vh; display: flex; justify-content: center; align-items: center; color: #fff; overflow: hidden;
+}
+
+@keyframes gradientBG { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+
+.container {
+    width: 100%; max-width: 450px; height: 90vh; background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.auth-screen, .chat-screen { display: none; flex-direction: column; height: 100%; padding: 30px; justify-content: center; }
+.auth-screen.active, .chat-screen.active { display: flex; }
+
+h2 { text-align: center; margin-bottom: 30px; font-size: 32px; background: linear-gradient(to right, #c084fc, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.input-group { margin-bottom: 20px; }
+
+input { width: 100%; padding: 15px; background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 14px; color: #fff; font-size: 16px; }
+input:focus { border-color: #a855f7; outline: none; }
+
+.btn { width: 100%; padding: 15px; border: none; border-radius: 14px; font-size: 16px; font-weight: bold; cursor: pointer; background: linear-gradient(to right, #8b5cf6, #ec4899); color: white; }
+.btn-sm { padding: 8px 15px; width: auto; border-radius: 10px; font-size: 14px; }
+
+.switch-text { text-align: center; margin-top: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.6); }
+.switch-text span { color: #f472b6; cursor: pointer; font-weight: bold; }
+
+/* Meni ak Header */
+.chat-header { padding: 15px; background: rgba(0, 0, 0, 0.25); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); position: relative; }
+.menu-btn { background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 5px 10px; margin-right: 10px; }
+.connect-box { display: flex; gap: 8px; flex-grow: 1; }
+.connect-box input { padding: 8px 12px; font-size: 14px; border-radius: 10px; }
+
+.menu-dropdown {
+    display: none; position: absolute; top: 60px; left: 15px; background: #15133c; 
+    border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); z-index: 10; width: 160px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5); overflow: hidden;
+}
+.menu-dropdown button { 
+width: 100%; 
+padding: 12px; 
+background: none; 
+border: none; 
+color: white; 
+text-align: left; 
+cursor: pointer; 
+font-size: 14px; 
+}
+.menu-dropdown button:hover { background: rgba(255, 255, 255, 0.1); }
+.menu-dropdown .danger-btn { color: #f87171; }
+
+/* Zòn Mesaj */
+.chat-messages { flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
+.message { max-width: 75%; padding: 12px 16px; border-radius: 18px; font-size: 15px; background: rgba(255, 255, 255, 0.08); align-self: flex-start; position: relative; }
+.msg-me { background: linear-gradient(135deg, #8b5cf6, #6d28d9); align-self: flex-end; cursor: pointer; }
+.msg-time { font-size: 10px; opacity: 0.6; display: block; text-align: right; margin-top: 6px; }
+
+.chat-input-area { padding: 15px; background: rgba(0, 0, 0, 0.25); display: flex; gap: 10px; }
+.chat-input-area input { flex-grow: 1; border-radius: 14px; }
+.btn-send { width: auto; padding: 10px 24px; }
