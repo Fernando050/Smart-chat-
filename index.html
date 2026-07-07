@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#8b5cf6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+    <title>SmartChat - Sekirite ak Stil</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script defer="" src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script defer="" src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script defer="" src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="auth-screen active" id="loginScreen">
+        <h2>SmartChat</h2>
+        <div class="input-group">
+            <input type="text" id="loginUsername" placeholder="ID / Non Itilizatè">
+        </div>
+        <div class="input-group">
+            <input type="password" id="loginPassword" placeholder="Modpas">
+        </div>
+        <button class="btn" id="loginBtn">Konekte (Login)</button>
+        <p class="switch-text">Ou pa gen kont? <span id="toSignUp">Kreye yon kont</span></p>
+    </div>
+
+    <div class="auth-screen" id="signupScreen">
+        <h2>Kreye Kont</h2>
+        <div class="input-group">
+            <input type="text" id="signupUsername" placeholder="Chwazi yon ID / Non Itilizatè">
+        </div>
+        <div class="input-group">
+            <input type="password" id="signupPassword" placeholder="Kreye yon Modpas">
+        </div>
+        <button class="btn" id="signupBtn">Anrejistre & Konekte</button>
+        <p class="switch-text">Ou gen kont deja? <span id="toLogin">Konekte la a</span></p>
+    </div>
+
+    <div class="chat-screen" id="chatScreen">
+        <div class="chat-header">
+            <button class="menu-btn" id="menuBtn">☰</button>
+            <div class="menu-dropdown" id="menuDropdown">
+                <button id="editMsgBtn">Modifier mesaj</button>
+                <button id="deleteMsgBtn" class="danger-btn">Delete mesaj</button>
+                <button id="logoutBtn" style="color: #fb923c;">Dekonekte kont lan</button>
+            </div>
+            
+            <div class="connect-box">
+                <input type="text" id="peerId" placeholder="Antre ID moun lan...">
+                <button class="btn btn-sm" id="connectBtn">Konekte</button>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message">
+                Byenveni! Antre ID yon itilizatè ki egziste deja anlè a pou n kòmanse pale.
+                <span class="msg-time">Kounye a</span>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="messageInput" placeholder="Ekri yon mesaj...">
+            <button class="btn btn-send" id="sendBtn">Voye</button>
+        </div>
+    </div>
+
+</div>
+
+<script defer="" src="script.js"></script>
+</body>
+</html>
